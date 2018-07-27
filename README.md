@@ -2,6 +2,6 @@
 
 # ChartKit-Swift
 
-Beautiful Chart library for iOS written in Swift 4.2. Bar Chart, Clock Chart and Contribution Graph.
+Beautiful Chart library for iOS written in Swift 4.2. Bar Chart, Clock Chart and Contribution Graph. Supports Storyboard.
 
 ---
