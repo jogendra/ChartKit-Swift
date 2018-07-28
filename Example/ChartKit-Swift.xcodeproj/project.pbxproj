@@ -12,6 +12,12 @@
 		40102970210B131600FA30FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4010296E210B131600FA30FF /* Main.storyboard */; };
 		40102972210B131C00FA30FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40102971210B131C00FA30FF /* Assets.xcassets */; };
 		40102975210B131C00FA30FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40102973210B131C00FA30FF /* LaunchScreen.storyboard */; };
+		4010298C210C8F5600FA30FF /* NSDate+TEAExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 40102981210C8F5600FA30FF /* NSDate+TEAExtensions.m */; };
+		4010298D210C8F5600FA30FF /* TEABarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 40102982210C8F5600FA30FF /* TEABarChart.m */; };
+		4010298E210C8F5600FA30FF /* TEAClockChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 40102983210C8F5600FA30FF /* TEAClockChart.m */; };
+		4010298F210C8F5600FA30FF /* TEATimeRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 40102988210C8F5600FA30FF /* TEATimeRange.m */; };
+		40102990210C8F5600FA30FF /* TEAContributionGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 4010298A210C8F5600FA30FF /* TEAContributionGraph.m */; };
+		40102991210C8F5600FA30FF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4010298B210C8F5600FA30FF /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +28,18 @@
 		40102971210B131C00FA30FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40102974210B131C00FA30FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		40102976210B131C00FA30FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40102980210C8F5600FA30FF /* TEAChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEAChart.h; sourceTree = "<group>"; };
+		40102981210C8F5600FA30FF /* NSDate+TEAExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+TEAExtensions.m"; sourceTree = "<group>"; };
+		40102982210C8F5600FA30FF /* TEABarChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEABarChart.m; sourceTree = "<group>"; };
+		40102983210C8F5600FA30FF /* TEAClockChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEAClockChart.m; sourceTree = "<group>"; };
+		40102984210C8F5600FA30FF /* TEATimeRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEATimeRange.h; sourceTree = "<group>"; };
+		40102985210C8F5600FA30FF /* TEAContributionGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEAContributionGraph.h; sourceTree = "<group>"; };
+		40102986210C8F5600FA30FF /* NSDate+TEAExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+TEAExtensions.h"; sourceTree = "<group>"; };
+		40102987210C8F5600FA30FF /* TEABarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEABarChart.h; sourceTree = "<group>"; };
+		40102988210C8F5600FA30FF /* TEATimeRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEATimeRange.m; sourceTree = "<group>"; };
+		40102989210C8F5600FA30FF /* TEAClockChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEAClockChart.h; sourceTree = "<group>"; };
+		4010298A210C8F5600FA30FF /* TEAContributionGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEAContributionGraph.m; sourceTree = "<group>"; };
+		4010298B210C8F5600FA30FF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				4010296A210B131600FA30FF /* AppDelegate.swift */,
+				4010297F210C8F5600FA30FF /* TEAChart */,
 				4010297E210C8A8900FA30FF /* ViewControllers */,
 				4010297C210C8A0600FA30FF /* Storyboards */,
 				4010297D210C8A2F00FA30FF /* Assests */,
@@ -86,6 +105,25 @@
 				4010296C210B131600FA30FF /* ViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		4010297F210C8F5600FA30FF /* TEAChart */ = {
+			isa = PBXGroup;
+			children = (
+				40102980210C8F5600FA30FF /* TEAChart.h */,
+				40102981210C8F5600FA30FF /* NSDate+TEAExtensions.m */,
+				40102982210C8F5600FA30FF /* TEABarChart.m */,
+				40102983210C8F5600FA30FF /* TEAClockChart.m */,
+				40102984210C8F5600FA30FF /* TEATimeRange.h */,
+				40102985210C8F5600FA30FF /* TEAContributionGraph.h */,
+				40102986210C8F5600FA30FF /* NSDate+TEAExtensions.h */,
+				40102987210C8F5600FA30FF /* TEABarChart.h */,
+				40102988210C8F5600FA30FF /* TEATimeRange.m */,
+				40102989210C8F5600FA30FF /* TEAClockChart.h */,
+				4010298A210C8F5600FA30FF /* TEAContributionGraph.m */,
+				4010298B210C8F5600FA30FF /* Info.plist */,
+			);
+			path = TEAChart;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,6 +184,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40102991210C8F5600FA30FF /* Info.plist in Resources */,
 				40102975210B131C00FA30FF /* LaunchScreen.storyboard in Resources */,
 				40102972210B131C00FA30FF /* Assets.xcassets in Resources */,
 				40102970210B131600FA30FF /* Main.storyboard in Resources */,
@@ -159,7 +198,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4010298C210C8F5600FA30FF /* NSDate+TEAExtensions.m in Sources */,
+				4010298F210C8F5600FA30FF /* TEATimeRange.m in Sources */,
+				40102990210C8F5600FA30FF /* TEAContributionGraph.m in Sources */,
+				4010298D210C8F5600FA30FF /* TEABarChart.m in Sources */,
 				4010296D210B131600FA30FF /* ViewController.swift in Sources */,
+				4010298E210C8F5600FA30FF /* TEAClockChart.m in Sources */,
 				4010296B210B131600FA30FF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
