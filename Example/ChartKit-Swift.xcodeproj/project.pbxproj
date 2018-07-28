@@ -19,6 +19,8 @@
 		40102990210C8F5600FA30FF /* TEAContributionGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 4010298A210C8F5600FA30FF /* TEAContributionGraph.m */; };
 		40102991210C8F5600FA30FF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4010298B210C8F5600FA30FF /* Info.plist */; };
 		40102994210C90AD00FA30FF /* BarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40102993210C90AD00FA30FF /* BarChart.swift */; };
+		40102996210C922D00FA30FF /* ClockChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40102995210C922D00FA30FF /* ClockChart.swift */; };
+		40102998210C925C00FA30FF /* ContributionGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40102997210C925C00FA30FF /* ContributionGraph.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		4010298A210C8F5600FA30FF /* TEAContributionGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEAContributionGraph.m; sourceTree = "<group>"; };
 		4010298B210C8F5600FA30FF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40102993210C90AD00FA30FF /* BarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChart.swift; sourceTree = "<group>"; };
+		40102995210C922D00FA30FF /* ClockChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockChart.swift; sourceTree = "<group>"; };
+		40102997210C925C00FA30FF /* ContributionGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributionGraph.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +137,8 @@
 			isa = PBXGroup;
 			children = (
 				40102993210C90AD00FA30FF /* BarChart.swift */,
+				40102995210C922D00FA30FF /* ClockChart.swift */,
+				40102997210C925C00FA30FF /* ContributionGraph.swift */,
 			);
 			path = ChartKit;
 			sourceTree = "<group>";
@@ -215,7 +221,9 @@
 				40102990210C8F5600FA30FF /* TEAContributionGraph.m in Sources */,
 				4010298D210C8F5600FA30FF /* TEABarChart.m in Sources */,
 				4010296D210B131600FA30FF /* ViewController.swift in Sources */,
+				40102998210C925C00FA30FF /* ContributionGraph.swift in Sources */,
 				4010298E210C8F5600FA30FF /* TEAClockChart.m in Sources */,
+				40102996210C922D00FA30FF /* ClockChart.swift in Sources */,
 				4010296B210B131600FA30FF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
