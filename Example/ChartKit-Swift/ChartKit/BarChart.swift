@@ -12,15 +12,15 @@ import UIKit
 public class BarChart: UIView {
 
     // Array of NSNumber
-    var data = [Any]()
+    var data = [Int]()
     // Array of NSString, nil if you don't want labels.
-    var xLabels: [Any]?
+    var xLabels: [String]?
     // Max y value for chart (only works when autoMax is NO)
     @IBInspectable var max: CGFloat = 0.0
     // Auto set max value
     @IBInspectable var autoMax = false
     @IBInspectable var barColor: UIColor?
-    var barColors = [Any]()
+    var barColors = [UIColor]()
     @IBInspectable var barSpacing: CGFloat = 0
     @IBInspectable var barBackgroundColor: UIColor?
     // Round bar height to pixel for sharper chart
@@ -63,7 +63,7 @@ public class BarChart: UIView {
     override public func draw(_ rect: CGRect) {
         super.draw(rect)
         let context: CGContext? = UIGraphicsGetCurrentContext()
-        let max: Double = autoMax ? data.value(forKeyPath: "@max.self")! : self.max
+        let max: Double = autoMax ? data.max() : self.max
         var barMaxHeight: CGFloat = rect.height
         let numberOfBars: Int = data.count
         let barWidth = (rect.width - barSpacing * CGFloat(numberOfBars - 1)) / CGFloat(numberOfBars)
@@ -80,54 +80,54 @@ public class BarChart: UIView {
         }
 
         for i in 0..<numberOfBars {
-            var barHeight = CGFloat((max == 0 ? 0 : barMaxHeight * data[i] / max))
+            var barHeight = max == 0 ? 0 : barMaxHeight * (data[i] as! CGFloat) / CGFloat(max)
             if barHeight > barMaxHeight {
                 barHeight = barMaxHeight
             }
             if roundToPixel {
                 barHeight = CGFloat(Int(barHeight))
             }
-            var x: CGFloat = floor(i * (barWidth + barSpacing))
+            var x: CGFloat = floor(CGFloat(i) * (barWidth + barSpacing))
             backgroundColor?.setFill()
             var backgroundRect = CGRect(x: x, y: 0, width: barWidthRounded, height: barMaxHeight)
-            context.fill(backgroundRect)
-            var barColor: UIColor? = barColors ? barColors[i % barColors.count] : barColor
+            context?.fill(backgroundRect)
+            var barColor: UIColor? = barColors.isEmpty ? barColors[i % barColors.count] : self.barColor
             barColor?.setFill()
             var barRect = CGRect(x: x, y: barMaxHeight - barHeight, width: barWidthRounded, height: barHeight)
-            context.fill(barRect)
+            context?.fill(barRect)
             // Populate self.accessibleElements with each bar's name and value.
             var element = UIAccessibilityElement(accessibilityContainer: self)
             // The frame can be set to just rect, if it improves usability.
             element.accessibilityFrame = convert(barRect, to: nil)
             // If xLabels has not been initialized, give each bar a name to identify them in the accessibiltyLabel.
-            var barLabel = xLabels[i] ? xLabels[i] : "Bar \(i + 1) of \(numberOfBars)"
+            var barLabel =  xLabels![i]
             // Combine eacb bar's title and value into the accessiblityLabel.
             /* The label uses a percentage estimate, in case the value and max are too large, but if a use case
              * requires count out of a total, substitute the following single-line comment.
              */
             // [NSString stringWithFormat:@"%@ : %@ out of %d", barLabel, self.data[i], (int)max];
-            var percentage = (Double((data[i]) as? NSNumber ?? 0.0)) / max
+            var percentage = (Double(truncating: (data[i]) as? NSNumber ?? 0.0)) / max
             element.accessibilityLabel = "\(barLabel) : %.2f %%"
             accessibleElements.append(element)
         }
     }
 
     // MARK: Accessibility
-    func isAccessibilityElement() -> Bool {
-        return false
-    }
-
-    override public func accessibilityElementCount() -> Int {
-        return data.count
-    }
-
-    override public func accessibilityElement(at index: Int) -> Any? {
-        return accessibleElements[index]
-    }
-
-    override public func index(ofAccessibilityElement element: Any) -> Int {
-        return accessibleElements.index(of: element)
-    }
+//    func isAccessibilityElement() -> Bool {
+//        return false
+//    }
+//
+//    override public func accessibilityElementCount() -> Int {
+//        return data.count
+//    }
+//
+//    override public func accessibilityElement(at index: Int) -> Any? {
+//        return accessibleElements[index]
+//    }
+//
+//    override public func index(ofAccessibilityElement element: Any) -> Int {
+//        return accessibleElements.index(of: element)
+//    }
 
     // MARK: Setters
     func setData(_ data: [Any]) {
@@ -135,7 +135,7 @@ public class BarChart: UIView {
         setNeedsDisplay()
     }
 
-    func setXLabels(_ xLabels: [Any]) {
+    func setXLabels(_ xLabels: [String]) {
         self.xLabels = xLabels
         setNeedsDisplay()
     }
@@ -150,7 +150,7 @@ public class BarChart: UIView {
         setNeedsDisplay()
     }
 
-    func setBarColors(_ barColors: [Any]) {
+    func setBarColors(_ barColors: [UIColor]) {
         self.barColors = barColors
         setNeedsDisplay()
     }
