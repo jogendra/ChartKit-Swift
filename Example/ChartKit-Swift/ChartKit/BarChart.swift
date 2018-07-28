@@ -9,22 +9,22 @@
 import UIKit
 
 @IBDesignable
-class BarChart: UIView {
+public class BarChart: UIView {
 
     // Array of NSNumber
     var data = [Any]()
     // Array of NSString, nil if you don't want labels.
-    var xLabels = [Any]()
+    var xLabels: [Any]?
     // Max y value for chart (only works when autoMax is NO)
     @IBInspectable var max: CGFloat = 0.0
     // Auto set max value
-    @IBInspectable var isAutoMax = false
+    @IBInspectable var autoMax = false
     @IBInspectable var barColor: UIColor?
     var barColors = [Any]()
-    @IBInspectable var barSpacing: Int = 0
+    @IBInspectable var barSpacing: CGFloat = 0
     @IBInspectable var barBackgroundColor: UIColor?
     // Round bar height to pixel for sharper chart
-    @IBInspectable var isRoundToPixel = false
+    @IBInspectable var roundToPixel = false
 
     var accessibleElements = [Any]()
 
@@ -35,7 +35,7 @@ class BarChart: UIView {
 
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
 
         loadDefaults()
@@ -43,36 +43,36 @@ class BarChart: UIView {
     }
 
     func loadDefaults() {
-        opaque = false
+        isOpaque = false
         // Initialize an empty array which will be populated in -drawRect:
         accessibleElements = [Any]()
         xLabels = nil
         autoMax = true
         barColor = UIColor(red: 106.0 / 255, green: 175.0 / 255, blue: 232.0 / 255, alpha: 1)
         barSpacing = 8
-        backgroundColor = UIColor(white: 0.97, alpha: 1)
+        barBackgroundColor = UIColor(white: 0.97, alpha: 1)
         roundToPixel = true
     }
 
-    func prepareForInterfaceBuilder() {
+    override public func prepareForInterfaceBuilder() {
         loadDefaults()
         data = [3, 1, 4, 1, 5, 9, 2, 6]
-        xLabels = ["T", "E", "A", "C", "h", "a", "r", "t"]
+        xLabels = ["C", "H", "A", "R", "T", "K", "I", "T"]
     }
 
-    func draw(_ rect: CGRect) {
+    override public func draw(_ rect: CGRect) {
         super.draw(rect)
         let context: CGContext? = UIGraphicsGetCurrentContext()
         let max: Double = autoMax ? data.value(forKeyPath: "@max.self")! : self.max
         var barMaxHeight: CGFloat = rect.height
         let numberOfBars: Int = data.count
-        let barWidth = CGFloat((rect.width - barSpacing * (numberOfBars - 1)) / numberOfBars)
+        let barWidth = (rect.width - barSpacing * CGFloat(numberOfBars - 1)) / CGFloat(numberOfBars)
         let barWidthRounded: CGFloat = ceil(barWidth)
-        if xLabels {
+        if (xLabels != nil) {
             let fontSize: CGFloat = floor(barWidth)
             let labelsTopMargin: CGFloat = ceil(fontSize * 0.33)
             barMaxHeight -= fontSize + labelsTopMargin
-            (xLabels as NSArray).enumerateObjects(usingBlock: {(_ label: String, _ idx: Int, _ stop: Bool) -> Void in
+            (xLabels as NSArray).enumerateObjects({(_ label: String, _ idx: Int, _ stop: Bool) -> Void in
                 var paragraphStyle = NSMutableParagraphStyle()
                 paragraphStyle.alignment = .center
                 label.draw(in: CGRect(x: idx * (barWidth + barSpacing), y: barMaxHeight + labelsTopMargin, width: barWidth, height: fontSize * 1.2), withAttributes: [.font: UIFont(name: "HelveticaNeue", size: fontSize), .foregroundColor: UIColor(white: 0.56, alpha: 1), .paragraphStyle: paragraphStyle])
@@ -113,24 +113,24 @@ class BarChart: UIView {
     }
 
     // MARK: Accessibility
-    var isAccessibilityElement: Bool {
+    func isAccessibilityElement() -> Bool {
         return false
     }
 
-    func accessibilityElementCount() -> Int {
+    override public func accessibilityElementCount() -> Int {
         return data.count
     }
 
-    func accessibilityElement(at index: Int) -> Any? {
+    override public func accessibilityElement(at index: Int) -> Any? {
         return accessibleElements[index]
     }
 
-    func index(ofAccessibilityElement element: Any) -> Int {
+    override public func index(ofAccessibilityElement element: Any) -> Int {
         return accessibleElements.index(of: element)
     }
 
     // MARK: Setters
-    var data: UnsafeRawPointer? {
+    func setData(_ data: [Any]) {
         self.data = data
         setNeedsDisplay()
     }
@@ -160,13 +160,13 @@ class BarChart: UIView {
         setNeedsDisplay()
     }
 
-    func setBarSpacing(_ barSpacing: Int) {
+    func setBarSpacing(_ barSpacing: CGFloat) {
         self.barSpacing = barSpacing
         setNeedsDisplay()
     }
 
-    var backgroundColor: UIColor? {
-        self.backgroundColor = backgroundColor
+    func setBackgroundColor(_ backgroundColor: UIColor) {
+        self.barBackgroundColor = backgroundColor
         setNeedsDisplay()
     }
 
