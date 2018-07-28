@@ -76,7 +76,7 @@
 			children = (
 				40102992210C903900FA30FF /* ChartKit */,
 				4010296A210B131600FA30FF /* AppDelegate.swift */,
-				4010297F210C8F5600FA30FF /* TEAChart */,
+				4010297F210C8F5600FA30FF /* JSChart */,
 				4010297E210C8A8900FA30FF /* ViewControllers */,
 				4010297C210C8A0600FA30FF /* Storyboards */,
 				4010297D210C8A2F00FA30FF /* Assests */,
@@ -110,7 +110,7 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		4010297F210C8F5600FA30FF /* TEAChart */ = {
+		4010297F210C8F5600FA30FF /* JSChart */ = {
 			isa = PBXGroup;
 			children = (
 				40102980210C8F5600FA30FF /* TEAChart.h */,
@@ -126,7 +126,7 @@
 				4010298A210C8F5600FA30FF /* TEAContributionGraph.m */,
 				4010298B210C8F5600FA30FF /* Info.plist */,
 			);
-			path = TEAChart;
+			path = JSChart;
 			sourceTree = "<group>";
 		};
 		40102992210C903900FA30FF /* ChartKit */ = {
