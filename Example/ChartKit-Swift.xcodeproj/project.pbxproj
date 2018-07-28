@@ -18,6 +18,7 @@
 		4010298F210C8F5600FA30FF /* TEATimeRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 40102988210C8F5600FA30FF /* TEATimeRange.m */; };
 		40102990210C8F5600FA30FF /* TEAContributionGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 4010298A210C8F5600FA30FF /* TEAContributionGraph.m */; };
 		40102991210C8F5600FA30FF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4010298B210C8F5600FA30FF /* Info.plist */; };
+		40102994210C90AD00FA30FF /* BarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40102993210C90AD00FA30FF /* BarChart.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		40102989210C8F5600FA30FF /* TEAClockChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEAClockChart.h; sourceTree = "<group>"; };
 		4010298A210C8F5600FA30FF /* TEAContributionGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEAContributionGraph.m; sourceTree = "<group>"; };
 		4010298B210C8F5600FA30FF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40102993210C90AD00FA30FF /* BarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 		40102969210B131600FA30FF /* ChartKit-Swift */ = {
 			isa = PBXGroup;
 			children = (
+				40102992210C903900FA30FF /* ChartKit */,
 				4010296A210B131600FA30FF /* AppDelegate.swift */,
 				4010297F210C8F5600FA30FF /* TEAChart */,
 				4010297E210C8A8900FA30FF /* ViewControllers */,
@@ -124,6 +127,14 @@
 				4010298B210C8F5600FA30FF /* Info.plist */,
 			);
 			path = TEAChart;
+			sourceTree = "<group>";
+		};
+		40102992210C903900FA30FF /* ChartKit */ = {
+			isa = PBXGroup;
+			children = (
+				40102993210C90AD00FA30FF /* BarChart.swift */,
+			);
+			path = ChartKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +209,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40102994210C90AD00FA30FF /* BarChart.swift in Sources */,
 				4010298C210C8F5600FA30FF /* NSDate+TEAExtensions.m in Sources */,
 				4010298F210C8F5600FA30FF /* TEATimeRange.m in Sources */,
 				40102990210C8F5600FA30FF /* TEAContributionGraph.m in Sources */,
