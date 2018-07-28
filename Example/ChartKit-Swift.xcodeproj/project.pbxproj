@@ -55,13 +55,37 @@
 			isa = PBXGroup;
 			children = (
 				4010296A210B131600FA30FF /* AppDelegate.swift */,
-				4010296C210B131600FA30FF /* ViewController.swift */,
-				4010296E210B131600FA30FF /* Main.storyboard */,
-				40102971210B131C00FA30FF /* Assets.xcassets */,
-				40102973210B131C00FA30FF /* LaunchScreen.storyboard */,
-				40102976210B131C00FA30FF /* Info.plist */,
+				4010297E210C8A8900FA30FF /* ViewControllers */,
+				4010297C210C8A0600FA30FF /* Storyboards */,
+				4010297D210C8A2F00FA30FF /* Assests */,
 			);
 			path = "ChartKit-Swift";
+			sourceTree = "<group>";
+		};
+		4010297C210C8A0600FA30FF /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				4010296E210B131600FA30FF /* Main.storyboard */,
+				40102973210B131C00FA30FF /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		4010297D210C8A2F00FA30FF /* Assests */ = {
+			isa = PBXGroup;
+			children = (
+				40102971210B131C00FA30FF /* Assets.xcassets */,
+				40102976210B131C00FA30FF /* Info.plist */,
+			);
+			path = Assests;
+			sourceTree = "<group>";
+		};
+		4010297E210C8A8900FA30FF /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4010296C210B131600FA30FF /* ViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
