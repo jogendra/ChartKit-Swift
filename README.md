@@ -5,3 +5,8 @@
 Beautiful Chart library for iOS written in Swift 4.2. Bar Chart, Clock Chart and Contribution Graph. Supports Storyboard.
 
 ---
+<br><br>
+## Support
+- [ ] Bar Chart
+- [ ] Clock Chart
+- [ ] Contribution Graph
